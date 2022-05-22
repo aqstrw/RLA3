@@ -81,13 +81,13 @@ def plot_smoothed_scores_wip(data, sav_window = 11, avg_plot=1, save=1, fname="d
         axs.set_xlabel("Episodes")
         axs.set_ylabel("Rewards")
 
+        # plot legends
+        axs.legend()
+
         # save plot
         if save:
             plt.tight_layout()
-            # fig.savefig(fname + "_runs.pdf")
-
-        # plot legends
-        axs.legend()
+            fig.savefig(fname + "_runs.pdf")
 
         # display fig
         fig.show()
@@ -113,7 +113,7 @@ def plot_smoothed_scores_wip(data, sav_window = 11, avg_plot=1, save=1, fname="d
         # save plot
         if save:
             plt.tight_layout()
-            # fig.savefig(fname + "_average.pdf")
+            fig.savefig(fname + "_average.pdf")
 
         # display fig
         fig.show()

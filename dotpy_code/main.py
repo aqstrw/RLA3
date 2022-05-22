@@ -11,39 +11,51 @@ import numpy as np
 import matplotlib.pyplot as plt
 from utils import plot_smoothed_scores_wip, save_data
 from agent import reinforce_agent
+import tensorflow as tf
 
 plt.rcParams['figure.figsize'] = (15, 7)
 plt.rcParams.update({'font.size': 14})
 
+import os
+
+os.environ['CUDA_VISIBLE_DEVICES'] = '-1'
+
+if tf.test.gpu_device_name():
+    print('GPU found')
+else:
+
+    print("No GPU found")
 
 # set hyperparameters here
 
-# learnrate = 0.001
-# gam = 0.99
-# runs = 8
-# ep_num = 2000
-# save_data_cadence = 500
-# smoothen_over = 11
-# if save_data_cadence>ep_num:
-#     print("WARNING : data will not get saved if save cadence is more than ep_num")
-#
-# # bookkeeping
-# fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)
-
-
-# testing
 learnrate = 0.001
 gam = 0.99
 runs = 3
-ep_num = 20
-save_data_cadence = 10
-smoothen_over = 3
+ep_num = 1000
+save_data_cadence = 500
+smoothen_over = 11
 if save_data_cadence>ep_num:
     print("WARNING : data will not get saved if save cadence is more than ep_num")
+
 # bookkeeping
 fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)
 
+
+# # testing
+# learnrate = 0.001
+# gam = 0.99
+# runs = 3
+# ep_num = 50
+# save_data_cadence = 25
+# smoothen_over = 3
+# if save_data_cadence>ep_num:
+#     print("WARNING : data will not get saved if save cadence is more than ep_num")
+# # bookkeeping
+# fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)
+
 if __name__ == "__main__":
+
+
 
     score_stack = []
     # run loop
