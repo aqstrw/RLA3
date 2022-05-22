@@ -38,7 +38,7 @@ if save_data_cadence>ep_num:
     print("WARNING : data will not get saved if save cadence is more than ep_num")
 
 # bookkeeping
-fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)
+fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)+"_3layers"
 
 
 # # testing
@@ -51,7 +51,7 @@ fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(g
 # if save_data_cadence>ep_num:
 #     print("WARNING : data will not get saved if save cadence is more than ep_num")
 # # bookkeeping
-# fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)
+# fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)+"_test"
 
 if __name__ == "__main__":
 

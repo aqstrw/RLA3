@@ -101,7 +101,7 @@ def plot_smoothed_scores_wip(data, sav_window = 11, avg_plot=1, save=1, fname="d
         # second plot
         fig, axs = plt.subplots(1, 1, figsize=(14, 7))
         axs.fill_between(range(len(avg)), smooth(avg - std, sav_window), smooth(avg + std, sav_window), alpha=0.2)
-        axs.plot(smooth(avg,sav_window), label="average over " + str(len(data)) + " runs")
+        axs.plot(smooth(avg, sav_window), label="average over " + str(len(data)) + " runs")
 
         # set labels
         axs.set_xlabel("Episodes")

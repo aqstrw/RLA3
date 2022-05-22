@@ -27,7 +27,6 @@ class reinforce_agent():
         self.pi = policy_network(n_states=self.n_states, n_actions=n_actions)  # check
         #         self.pi = policy_network(n_actions = n_actions)
         self.pi.compile(optimizer=keras.optimizers.Adam(learning_rate=self.lr))  # check
-        print(self.pi.summary())
 
     # get action from policy
     def get_act(self, state, ):

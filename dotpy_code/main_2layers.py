@@ -18,30 +18,30 @@ plt.rcParams.update({'font.size': 14})
 
 # set hyperparameters here
 
-# learnrate = 0.001
-# gam = 0.99
-# runs = 8
-# ep_num = 2000
-# save_data_cadence = 500
-# smoothen_over = 11
-# if save_data_cadence>ep_num:
-#     print("WARNING : data will not get saved if save cadence is more than ep_num")
-#
-# # bookkeeping
-# fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)
-
-
-# testing
-learnrate = 0.001
+learnrate = 0.0005
 gam = 0.99
-runs = 3
-ep_num = 20
-save_data_cadence = 10
-smoothen_over = 3
+runs = 8
+ep_num = 1500
+save_data_cadence = 500
+smoothen_over = 11
 if save_data_cadence>ep_num:
     print("WARNING : data will not get saved if save cadence is more than ep_num")
+
 # bookkeeping
-fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)
+fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)+"_2layers"
+
+
+# # testing
+# learnrate = 0.001
+# gam = 0.99
+# runs = 3
+# ep_num = 20
+# save_data_cadence = 10
+# smoothen_over = 3
+# if save_data_cadence>ep_num:
+#     print("WARNING : data will not get saved if save cadence is more than ep_num")
+# # bookkeeping
+# fname = "reinforce_v1_lr"+"{:.4f}".format(learnrate)[-4:]+"_g"+"{:.4f}".format(gam)[-4:]+"_runs{:1d}_eps".format(runs)+str(ep_num)+"_2layers_test"
 
 if __name__ == "__main__":
 
@@ -63,6 +63,10 @@ if __name__ == "__main__":
 
         # episode loop
         for ep in range(ep_num):
+
+            if ep == 1:
+                print(agent_007.summarise())
+
             done = False
             score = 0
             s = env.reset()
