@@ -89,6 +89,9 @@ def plot_smoothed_scores_wip(data, sav_window = 11, avg_plot=1, save=1, fname="d
             plt.tight_layout()
             fig.savefig(fname + "_runs.pdf")
 
+        # plot legends
+        axs.legend()
+
         # display fig
         fig.show()
 
