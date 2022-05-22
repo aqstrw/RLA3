@@ -11,9 +11,10 @@ import tensorflow as tf
 import numpy as np
 from tensorflow import keras
 import tensorflow_probability as tfp
+from policy_net import policy_network
 
 
-class agent():
+class reinforce_agent():
 
     def __init__(self, n_actions, n_states, lr=0.003, gamma=0.99, ):
         self.lr = lr
